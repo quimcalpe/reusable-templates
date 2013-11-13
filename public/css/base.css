@@ -1,3 +1,24 @@
 body {
-	font-family: Helvetica;
+  font-family: Helvetica;
+}
+.nav {
+  display: block;
+  list-style: none;
+  padding: 10px;
+}
+.nav li {
+  float: left;
+  padding-right: 10px;
+}
+.nav li a {
+  color: #0088CC;
+  text-decoration: none;
+}
+.nav li a:hover {
+  color: #005580;
+  font-weight: bold;
+}
+#content {
+  clear: both;
+  padding: 10px;
 }

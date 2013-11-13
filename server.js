@@ -16,12 +16,18 @@ app.get('/:section?', function (req, res) {
   if ( req.headers['x-ajax'] ) {
     load_template(req.params.section).then(function (tpl) {
       res.send(tpl());
+    }, function (error) {
+      console.error(error);
+      res.send(404, '<h1>404 not found</h1>');
     });
   } else {
     load_template("index").then(function (tpl) {
-      register_partial("content", req.params.section).then(function () {
-        res.send(tpl());
-      });
+      return register_partial("content", req.params.section, tpl);
+    }).then(function (tpl) {
+      res.send(tpl());
+    }, function (error) {
+      console.error(error);
+      res.send(404, '<h1>404 not found</h1>');
     });
   }
 });
@@ -39,24 +45,29 @@ function load_template(template) {
       deferred.resolve(tpl_cache[template]);
   } else {
     fs.readFile('public/tpl/'+template+'.tpl', 'utf8', function (err, data) {
-      if (err) deferred.reject(err);
-      tpl = handlebars.compile(data);
-      tpl_cache[template] = tpl;
-      deferred.resolve(tpl);
+      if ( err ) {
+        deferred.reject(err);
+      } else {
+        tpl = handlebars.compile(data);
+        tpl_cache[template] = tpl;
+        deferred.resolve(tpl);        
+      }
     });
   }
   return deferred.promise;
 }
 
-function register_partial(partial, template) {
+function register_partial(partial, template, pare) {
   var deferred = Q.defer();
   if ( tpl_partials_cache[partial] === template ) {
-      deferred.resolve(true);
+      deferred.resolve(pare);
   } else {
     load_template(template).then(function (tpl) {
       handlebars.registerPartial(partial, tpl);
       tpl_partials_cache[partial] = template;
-      deferred.resolve(true);
+      deferred.resolve(pare);
+    }, function (error) {
+      deferred.reject(error);
     });
   }
   return deferred.promise;

@@ -15,14 +15,16 @@ $(document).ready(function() {
 
 window.App = {};
 App.load_section = function(section) {
-  $.ajax({
-    dataType : "html",
-    type : "GET",
-    url : section,
-    success : function(respuesta) {
-      $("#contenido").html(respuesta);
-    }
-  });
+  if ( section !== undefined ) {
+    $.ajax({
+      dataType : "html",
+      type : "GET",
+      url : section,
+      success : function(respuesta) {
+        $("#content").html(respuesta);
+      }
+    });
+  }
 };
 
 window.onpopstate = function (event) {
