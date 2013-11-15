@@ -4,7 +4,7 @@ body {
 .nav {
   display: block;
   list-style: none;
-  padding: 50px;
+  padding: 25px;
 }
 .nav li {
   float: left;
