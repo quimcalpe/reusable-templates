@@ -15,6 +15,6 @@ test('inexistent template throws error', function (t) {
   TPL.load("nonono").then(function (tpl) {
     t.fail("should fail...");
   }, function (error) {
-    t.ok(true);
+    t.pass("expected");
   });
 });
