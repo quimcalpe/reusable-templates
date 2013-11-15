@@ -1,1 +1,1 @@
-Hola {{name}}!
+Hi {{name}}!
