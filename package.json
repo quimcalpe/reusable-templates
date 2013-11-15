@@ -1,7 +1,7 @@
 {
-  "name": "tpl-reusables",
+  "name": "reusable-templates",
   "version": "0.0.1",
-  "description": "Ejemplo de Plantillas reusables desde servidor y cliente",
+  "description": "Reusable templates example, from server or browser",
   "main": "server.js",
   "scripts": {
     "test": "tap ./test",
