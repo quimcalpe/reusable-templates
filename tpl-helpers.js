@@ -10,7 +10,7 @@ function load(template, no_cache) {
   if ( no_cache !== true && tpl_cache[template] ) {
     deferred.resolve(tpl_cache[template]);
   } else {
-    fs.readFile('public/tpl/'+template+'.tpl', 'utf8', function (err, data) {
+    fs.readFile(__dirname + '/public/tpl/'+template+'.tpl', 'utf8', function (err, data) {
       if ( err ) {
         deferred.reject(err);
       } else {

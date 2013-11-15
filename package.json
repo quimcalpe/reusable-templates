@@ -4,7 +4,7 @@
   "description": "Ejemplo de Plantillas reusables desde servidor y cliente",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tap ./test",
     "start": "node server.js"
   },
   "author": "Quim Calpe",
@@ -12,6 +12,7 @@
   "dependencies": {
     "q": "~0.9.7",
     "express": "~3.4.4",
-    "handlebars": "~1.1.2"
+    "handlebars": "~1.1.2",
+    "tap": "~0.4.4"
   }
 }
