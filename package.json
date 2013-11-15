@@ -7,12 +7,17 @@
     "test": "tap ./test",
     "start": "node server.js"
   },
-  "author": "Quim Calpe",
+  "author": "Quim Calpe <quim@kalpe.com> (https://github.com/quimcalpe)",
+  "homepage": "https://github.com/quimcalpe/reusable-templates",
   "license": "MIT",
   "dependencies": {
-    "q": "~0.9.7",
-    "express": "~3.4.4",
-    "handlebars": "~1.1.2",
-    "tap": "~0.4.4"
+    "q": "~0.9",
+    "express": "~3",
+    "handlebars": "~1",
+    "tap": "~0.4"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "git://github.com/quimcalpe/reusable-templates.git"
   }
 }
