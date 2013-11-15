@@ -1,9 +1,11 @@
 var express = require("express");
 var TPL = require("./tpl-helpers");
+var throttle = require("./throttle");
 
 var app = express();
 app.use(express.bodyParser());
 app.use(express.compress());
+app.use(throttle);
 app.get('/:section?', function (req, res) {
   if ( req.params.section === undefined ) {
     req.params.section = "home";
@@ -19,7 +21,7 @@ app.get('/:section?', function (req, res) {
     TPL.register_partial("content", req.params.section).then(function (){
       return TPL.load("index");
     }).then(function (tpl) {
-      res.send(tpl());
+      res.send(tpl({render_mode: req.render_mode || "browser"}));
     }, function (error) {
       console.error(error);
       res.send(404, '<h1>404 not found</h1>');
