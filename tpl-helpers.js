@@ -16,7 +16,7 @@ function load(template, no_cache) {
       } else {
         tpl = handlebars.compile(data);
         tpl_cache[template] = tpl;
-        deferred.resolve(tpl);        
+        deferred.resolve(tpl);
       }
     });
   }
