@@ -5,11 +5,10 @@ Proof of concept weekend project with reusable templates rendered on server and 
 `history.pushState()` is very useful in this scenario, URLs are seamless for visitors, no ugly hashes. Browsers without pushState support just act as old browsers and navigate with server rendering.
 
 Throttling
-==========
+----------
 I implemented a simple (and silly) throttling mechanism to balance to server rendering when resources available. It's just a concept, it's a fake algorithm, but it's a starting hook if someone is interested.
 
-Promises/A+
-===========
+### Promises/A+
 Just to play with incoming [Promises/A+](http://promisesaplus.com) standard, hacked up a tpl-helpers module to load templates from disk with very simple caching support.
 
 Used modules
