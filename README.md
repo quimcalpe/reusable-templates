@@ -22,26 +22,26 @@ Used modules
 Installation
 ============
 Clone from GitHub:
-```
-git clone git://github.com/quimcalpe/reusable-templates.git
-cd reusable-templates
+```bash
+$ git clone git://github.com/quimcalpe/reusable-templates.git
+$ cd reusable-templates
 ```
 With [npm](https://npmjs.org) do:
-```
-npm install
+```bash
+$ npm install
 ```
 
 Usage
 =====
-```
-npm start
+```bash
+$ npm start
 ```
 Open a browser and point to `http://localhost:3000`
 
 Testing
 =======
-```
-npm test
+```bash
+$ npm test
 ```
 
 License
