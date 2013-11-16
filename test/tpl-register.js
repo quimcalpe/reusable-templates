@@ -1,5 +1,5 @@
 var test = require('tap').test;
-var TPL = require('../tpl-helpers');
+var TPL = require('../lib/tpl-helpers');
 
 test('register a partial', function (t) {
   t.plan(1);

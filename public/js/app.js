@@ -13,7 +13,6 @@ $(document).ready(function() {
 window.App = {};
 App.render_mode = "browser";
 App.render = function(mode) {
-  console.log("rendering changed to "+mode);
   if ( mode === "server" ) {
     // restore default links, server rendering
     $("ul.nav li a").unbind('click');

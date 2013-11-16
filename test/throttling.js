@@ -1,5 +1,5 @@
 var test = require('tap').test;
-var throttle = require('../throttle');
+var throttle = require('../lib/throttle');
 
 test('change to server on 10th request', function (t) {
   var req = {};

@@ -1,6 +1,6 @@
 var express = require("express");
-var TPL = require("./tpl-helpers");
-var throttle = require("./throttle");
+var TPL = require("./lib/tpl-helpers");
+var throttle = require("./lib/throttle");
 
 var app = express();
 app.use(express.bodyParser());
