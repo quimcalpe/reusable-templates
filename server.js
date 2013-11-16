@@ -12,7 +12,7 @@ app.get('/:section?', function (req, res) {
   }
   if ( req.headers['x-ajax'] ) {
     TPL.load(req.params.section).then(function (tpl) {
-      res.send(tpl());
+      res.send(tpl({name: "from browser"}));
     }, function (error) {
       console.error(error);
       res.send(404, '<h1>404 not found</h1>');
@@ -21,7 +21,10 @@ app.get('/:section?', function (req, res) {
     TPL.register_partial("content", req.params.section).then(function (){
       return TPL.load("index");
     }).then(function (tpl) {
-      res.send(tpl({render_mode: req.render_mode || "browser"}));
+      res.send(tpl({
+        content : {name: "from server"},
+        render_mode: req.render_mode || "browser"
+      }));
     }, function (error) {
       console.error(error);
       res.send(404, '<h1>404 not found</h1>');
