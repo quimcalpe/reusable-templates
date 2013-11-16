@@ -1,5 +1,9 @@
 body {
-  font-family: Helvetica;
+  font-family: Helvetica, Lucida, Arial, sans-serif;
+}
+em {
+  font-style: italic;
+  color: #AAA;
 }
 .nav {
   display: block;

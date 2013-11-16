@@ -29,11 +29,11 @@ App.render = function(mode) {
 App.load_section = function(section) {
   if ( section !== undefined ) {
     $.ajax({
-      dataType : "html",
       type : "GET",
       url : section,
       success : function(data) {
-        $("#content").html(data);
+        var tpl = Handlebars.compile(data);
+        $("#content").html(tpl({data: "from browser"}));
       }
     });
   }

@@ -13,6 +13,7 @@
     </ul>
     <div id="content">{{>content content}}</div>
     <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="js/vendor/handlebars.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript">App.render_mode = "{{render_mode}}";</script>
   </body>

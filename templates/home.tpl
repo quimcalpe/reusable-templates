@@ -1,1 +1,1 @@
-Hi {{name}}!
+<strong>Hi</strong> {{data}}!

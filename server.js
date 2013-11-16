@@ -11,8 +11,8 @@ app.get('/:section?', function (req, res) {
     req.params.section = "home";
   }
   if ( req.headers['x-ajax'] ) {
-    TPL.load(req.params.section).then(function (tpl) {
-      res.send(tpl({name: "from browser"}));
+    TPL.load_raw(req.params.section).then(function (tpl) {
+      res.send(tpl);
     }, function (error) {
       console.error(error);
       res.send(404, '<h1>404 not found</h1>');
@@ -22,7 +22,7 @@ app.get('/:section?', function (req, res) {
       return TPL.load("index");
     }).then(function (tpl) {
       res.send(tpl({
-        content : {name: "from server"},
+        content : {data: "from server"},
         render_mode: req.render_mode || "browser"
       }));
     }, function (error) {
