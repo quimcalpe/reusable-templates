@@ -4,6 +4,8 @@ Proof of concept weekend project with reusable templates rendered on server and 
 
 `history.pushState()` is very useful in this scenario, URLs are seamless for visitors, no ugly hashes. Browsers without pushState support just act as old browsers and navigate with server rendering.
 
+[![Build Status](https://travis-ci.org/quimcalpe/reusable-templates.png)](https://travis-ci.org/quimcalpe/reusable-templates)
+
 ### Throttling
 I implemented a simple (and silly) throttling mechanism to balance to server rendering when resources available. It's just a concept, it's a fake algorithm, but it's a starting hook if someone is interested.
 
